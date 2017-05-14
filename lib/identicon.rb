@@ -20,6 +20,7 @@ module Identicon
     end
     
     def generate
+      puts @digest
       color = get_color(@digest)
       puts color.inspect
       array = get_array(@digest)
@@ -36,17 +37,16 @@ module Identicon
       
       def get_array(digest)
         values = digest[16..31]
-        col_count = COL / 2 + 1
+        row_count = ROW / 2 + 1
         array = Hash.new
         
         count = 0
-        ROW.times do |row|
-          col_count.times do |col|
+        COL.times do |col|
+          row_count.times do |row|
             color = values[count] % 2 == 0 ? 0 : 1
-            array[[row,col]] = color 
-            array[[row, COL - col - 1]] = color
+            array[[row, col]] = color 
+            array[[ROW - row - 1, col]] = color
             count += 1
-            # DEBUG image is not correct, need to fix
           end
         end
         array
