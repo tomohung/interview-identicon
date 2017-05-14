@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Tomo Hung"]
   spec.email         = ["tomohung@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{interview identicon.}
+  spec.description   = %q{MD5 digest to color and array to generate PNG avatar.}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -29,4 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "chunky_png", "~> 1.3.8"
 end
