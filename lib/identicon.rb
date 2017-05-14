@@ -10,7 +10,6 @@ module Identicon
   class Icon
     ROW = 5
     COL = 5
-    NO_COLOR = ChunkyPNG::Color('white')
     BASIC_UNIT = 50 # pixels
     
     def initialize(user_name)
@@ -54,12 +53,13 @@ module Identicon
       end
       
       def get_png(array, color)
-        png = ChunkyPNG::Image.new(250, 250, color)
+        png = ChunkyPNG::Image.new(250, 250, ChunkyPNG::Color::TRANSPARENT)
 
         array.each do |k, v|
+          next if v == 0
           BASIC_UNIT.times do |row|
             BASIC_UNIT.times do |col|
-              png[k[0] * BASIC_UNIT + row, k[1] * BASIC_UNIT + col] = v == 0 ? NO_COLOR : color
+              png[k[0] * BASIC_UNIT + row, k[1] * BASIC_UNIT + col] = color
             end
           end
         end
