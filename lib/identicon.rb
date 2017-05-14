@@ -20,13 +20,13 @@ module Identicon
     end
     
     def generate
-      puts @digest.inspect
+      # puts @digest.inspect
       color = get_color(@digest)
-      puts color.inspect
+      # puts color.inspect
       array = get_array(@digest)
-      puts array.inspect
+      # puts array.inspect
       png = get_png(array, color)
-      png.save("#{@username}.png", interlace: true)
+      png.save("#{@username}.png")
     end
 
     private
