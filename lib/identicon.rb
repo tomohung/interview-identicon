@@ -16,17 +16,18 @@ module Identicon
     def initialize(user_name)
       md5 = Digest::MD5.new
       md5.update(user_name)
+      @username = user_name
       @digest = md5.hexdigest.bytes
     end
     
     def generate
-      puts @digest
+      puts @digest.inspect
       color = get_color(@digest)
       puts color.inspect
       array = get_array(@digest)
       puts array.inspect
       png = get_png(array, color)
-      png.save('filename.png', interlace: true)
+      png.save("#{@username}.png", interlace: true)
     end
 
     private
@@ -53,7 +54,7 @@ module Identicon
       end
       
       def get_png(array, color)
-        png = ChunkyPNG::Image.new(250, 250, ChunkyPNG::Color::TRANSPARENT)
+        png = ChunkyPNG::Image.new(250, 250, color)
 
         array.each do |k, v|
           BASIC_UNIT.times do |row|
