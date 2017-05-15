@@ -6,7 +6,7 @@ It’s called “Identicon”. You can read the wiki (https://en.wikipedia.org/w
 
 ```Identicon.new(<user_name>).generate```
 
-![alt text](https://github.com/tomohung/interview-identicon/master/sample.png)
+![alt text](https://github.com/tomohung/interview-identicon/blob/master/sample.png)
 
 This is an identicon, size: 250px * 250px, basic unit: 50px * 50px
 Notice: the avatar should always be the same with the same user_name, and be bilateral symmetry
