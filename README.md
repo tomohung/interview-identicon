@@ -23,9 +23,13 @@ Generate avatar file and save.
 ## Try it
 
 $ gem build identicon.gemspec
+
 $ gem install identicon-x.x.x
+
 $ irb
+
 irb> require 'identicon'
+
 irb> Identicon.new(<user_name>).generate
 
 then will ouput a <user_name>.png file
