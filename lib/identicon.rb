@@ -31,8 +31,8 @@ module Identicon
 
     private
       def get_color(digest)
-        value = digest[0..3]
-        ChunkyPNG::Color.rgba(value[0], value[1], value[2], value[3])
+        value = digest[0...3]
+        ChunkyPNG::Color.rgb(value[0], value[1], value[2])
       end
       
       def get_array(digest)
